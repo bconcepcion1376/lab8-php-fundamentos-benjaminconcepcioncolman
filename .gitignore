@@ -1,0 +1,5 @@
+# Credenciales locales: nunca se suben a GitHub
+config/db.php
+
+# Página de diagnóstico (no debe publicarse)
+public/info.php
