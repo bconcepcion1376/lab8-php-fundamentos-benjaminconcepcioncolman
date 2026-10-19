@@ -27,12 +27,12 @@ $lista = [1, 2, 3];
 // ===== 3.3 Tipos de datos y conversión =====
 var_dump($codigo, $n1, $precio, $activo, $nulo, $lista);
 
-$suma_str = "5" + "10";          // [tu comentario: por qué da 15]
-$concat   = "5" . "10";          // [tu comentario: por qué da "510"]
-$cast_int = (int) "12abc";       // [tu comentario: por qué da 12]
-$float_eq = (0.1 + 0.2 == 0.3);  // [tu comentario: por qué da false]
-$loose    = ("10" == "1e1");     // [tu comentario: por qué da true]
-$strict   = ("10" === "1e1");    // [tu comentario: por qué da false]
+$suma_str = "5" + "10";          // solo sirve para números. PHP ve que los textos parecen números, los convierte y los suma.
+$concat   = "5" . "10";          // El punto une textos. No hace cálculo: pega uno después del otro.
+$cast_int = (int) "12abc";       // Convertir a entero lee los dígitos del principio y se detiene en el primer carácter que no es número (a).
+$float_eq = (0.1 + 0.2 == 0.3);  // Los decimales se guardan en binario de forma aproximada. 0.1 + 0.2 da realmente 0.30000000000000004, que no es igual a 0.3.
+$loose    = ("10" == "1e1");     // == compara con conversión. Los dos textos parecen números, y "1e1" es notación científica de 1 × 10¹ = 10. Entonces compara 10 con 10.
+$strict   = ("10" === "1e1");    // === no convierte: exige el mismo tipo y el mismo valor exacto. Son dos textos distintos.
 
 // ===== 3.4 Salida final =====
 $resultado = [
